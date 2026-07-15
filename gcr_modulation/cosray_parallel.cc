@@ -47,7 +47,7 @@ void GetFields(double t, double* pos, double* u, double* B)
 // Compute parallel component of diffusion
 inline double GetKappaPara(double t, double* pos, double mom, double Bmag)
 {
-// TODO
+   return (1.0/3.0)*lambda*Vel(mom)*(B_0/Bmag)*sqrt(mom/p_0);
 };
 
 // Compute all 9 components of the diffusion tensor
@@ -72,7 +72,8 @@ void GetKappaTensor(double t, double* pos, double mom, double* B, double Kappa[]
 // Boundary condition
 inline double OuterBoundaryCondition(double* pos, double mom)
 {
-// TODO
+   //return (J_0/Sqr(mom))*((pow(EnrKin(mom)/T_0,0.2))/(pow(1+pow(EnrKin(mom)/T_b,1.9),1)));
+   return 12.0/Sqr(mom) * (pow(EnrKin(mom)/T_0,-2.6))/(1.0+5.3*(pow(EnrKin(mom)/T_0,-1.21)) + 1.3 * (pow(EnrKin(mom)/T_0,-2.8)) + 0.0087*(pow(EnrKin(mom)/T_0,-4.32)))
 };
 
 // Set initial conditions

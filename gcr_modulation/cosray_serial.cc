@@ -6,7 +6,7 @@
 
 #define PRINT_TRAJECTORY
 #define PRINT_INTENSITY
-// #define PARKER_FIELD
+#define PARKER_FIELD
 
 // Compute the background flow and field
 void GetFields(double t, double* pos, double* u, double* B)
@@ -47,6 +47,9 @@ void GetFields(double t, double* pos, double* u, double* B)
 inline double GetKappaPara(double t, double* pos, double mom, double Bmag)
 {
 // TODO
+   //return (1.0/3.0)*lambda*Vel(mom)*(B_0/Bmag)*sqrt(mom/p_0);
+   int lb = 1.2618*lc_0;
+   return 3 * pow(Vel(mom),3)
 };
 
 // Compute all 9 components of the diffusion tensor
@@ -72,6 +75,7 @@ void GetKappaTensor(double t, double* pos, double mom, double* B, double Kappa[]
 inline double OuterBoundaryCondition(double* pos, double mom)
 {
 // TODO
+   return (J_0/Sqr(mom))*((pow(EnrKin(mom)/T_0,0.2))/(pow(1+pow(EnrKin(mom)/T_b,1.9),1)));
 };
 
 // Set initial conditions

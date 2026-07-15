@@ -57,7 +57,7 @@ void GetFields(double t, double* pos, double* u, double* B)
 // Flat equatorial current sheet
 // if z < 0: positive cycle (A > 0)
 // if z > 0: negative cycle (A < 0)
-   if (pos[2] < 0.0) {
+   if (pos[2] > 0.0) {
       B[0] *= -1.0;
       B[1] *= -1.0;
       B[2] *= -1.0;
