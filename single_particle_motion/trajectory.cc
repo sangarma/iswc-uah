@@ -11,11 +11,11 @@ inline void Bfield(double t, double* pos, double* B)
    if (pos[0] <= 0){
    B[0] = 0.0;
    B[1] = 0.0;
-   B[2] = 0.4;
+   B[2] = -0.4;
    } else{
       B[0] = 0;
       B[1] = 0;
-      B[2] = 0.8;
+      B[2] = 0.4;
    }
 }
 
@@ -24,7 +24,7 @@ inline void Efield(double t, double* pos, double* E)
 {
 // Constant field
 	E[0] = 0;
-	E[1] = 0.01;
+	E[1] = 0.0;
 	E[2] = 0;
 };
 

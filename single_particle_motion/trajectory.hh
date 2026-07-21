@@ -11,7 +11,7 @@ const double s = 2.0;         // mystery constant
 // Magnetic field
 const double Bx = 0.0;        // magnetic field in the x direction
 const double By = 0.0;        // magnetic field in the y direction
-const double Bz = 1.0;        // magnetic field in the z direction
+const double Bz = 0.0;        // magnetic field in the z direction
 
 // Electric field
 const double Ex = 0.0;        // electric field in the x direction
@@ -19,19 +19,19 @@ const double Ey = 0.0;        // electric field in the y direction
 const double Ez = 0.0;        // electric field in the z direction
 
 // Position
-const double Rx = -10.0;      // initial x position
+const double Rx = 0.0;      // initial x position
 const double Ry = 0.0;        // initial y position
 const double Rz = 0.0;        // initial z position
 
 // Momentum
 const double Px = 0.0;        // initial x momentum
-const double Py = 1.0;        // initial y momentum
+const double Py = 0.5;        // initial y momentum
 const double Pz = 0.0;        // initial z momentum
 
 // Numerical integration parameters
 const double dmax = 5;      // maximum spatial displacement per step
 const double tmax = 1000;    // maximum time to integrate
-const double CFL = 0.5;       // CFL condition
+const double CFL = 0.9;       // CFL condition
 
 // Square function
 inline double Sqr(double x)
